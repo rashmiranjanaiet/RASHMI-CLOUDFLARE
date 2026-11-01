@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0b1420">
+  <link rel="icon" type="image/png" href="./assets/favicon.png">
+  <link rel="apple-touch-icon" href="./assets/favicon.png">
+  <title>RASHMI DEV</title>
+  <style>
+    * { box-sizing: border-box; }
+    html, body { width: 100%; min-height: 100%; margin: 0; overflow-x: hidden; background: #fff; }
+    main { width: 100%; }
+    #hero { position: relative; width: 100%; height: 100vh; height: 100dvh; overflow: hidden; background: #0b1420; }
+    #screen { display: block; width: 100%; height: 100%; }
+    #source { position: fixed; inset: 0; width: 100%; height: 100%; opacity: 0; pointer-events: none; }
+    #brand-mark {
+      position: absolute;
+      z-index: 1;
+      right: clamp(10px, 1.5vw, 22px);
+      bottom: clamp(44px, 6vh, 78px);
+      width: clamp(130px, 16vw, 230px);
+      height: auto;
+      pointer-events: none;
+    }
+    .section-sound-button {
+      position: absolute;
+      z-index: 2;
+      top: 50%;
+      right: max(16px, env(safe-area-inset-right));
+      display: grid;
+      width: 42px;
+      height: 42px;
+      place-items: center;
+      padding: 0;
+      transform: translateY(-50%);
+      border: 1px solid rgb(255 255 255 / 35%);
+      border-radius: 50%;
+      color: white;
+      background: rgb(8 18 30 / 62%);
+      backdrop-filter: blur(8px);
+      cursor: pointer;
+    }
+    .section-sound-button:hover { background: rgb(8 18 30 / 86%); }
+    .section-sound-button:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
+    .section-sound-button svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.8; }
+    #hero .section-sound-button { position: absolute; color: white; }
+    #contact-links {
+      position: fixed;
+      z-index: 4;
+      top: 50%;
+      left: max(10px, env(safe-area-inset-left));
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      transform: translateY(-50%);
+    }
+    #contact-links a { display: grid; width: 58px; height: 58px; place-items: center; transition: transform .18s ease; }
+    #contact-links a:hover, #contact-links a:focus-visible { transform: scale(1.1); }
+    #contact-links a:focus-visible { outline: 2px solid #fff; outline-offset: 3px; border-radius: 12px; }
+    #contact-links img { display: block; width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 2px 5px rgb(0 0 0 / 30%)); }
+    .project-frame { position: relative; }
+    .project-frame .section-sound-button { color: #27272a; background: rgb(255 255 255 / 86%); border-color: #a1a1aa; }
+    #projects {
+      display: grid;
+      width: min(100%, 1920px);
+      margin: 0 auto;
+      gap: clamp(16px, 2vw, 32px);
+    }
+    .project-frame {
+      display: grid;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      place-items: center;
+      border: 1px solid #e5e7eb;
+      background: #fff;
+      color: #a1a1aa;
+      font: 500 clamp(18px, 2vw, 28px)/1.4 system-ui, sans-serif;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .game-frame { display: block; overflow: hidden; background: #100c18; }
+    .game-frame iframe { display: block; width: 100%; height: 100%; border: 0; background: #100c18; }
+    .portfolio-frame { display: block; overflow: hidden; }
+    .portfolio-frame iframe { display: block; width: 100%; height: 100%; border: 0; background: #fafafa; }
+  </style>
+</head>
+<body>
+  <main>
+    <nav id="contact-links" aria-label="Contact Rashmi">
+      <a href="mailto:rashmiranjanabc241947@gmail.com" aria-label="Email Rashmi at rashmiranjanabc241947@gmail.com" title="Email Rashmi">
+        <img src="./assets/contact-gmail.png" alt="Gmail">
+      </a>
+      <a href="https://wa.me/917008927696" target="_blank" rel="noopener noreferrer" aria-label="Message Rashmi on WhatsApp" title="WhatsApp Rashmi">
+        <img src="./assets/contact-whatsapp.png" alt="WhatsApp">
+      </a>
+    </nav>
+    <section id="hero" aria-label="Snow video">
+      <canvas id="screen" role="img" aria-label="Snow video playing forward and backward"></canvas>
+      <img id="brand-mark" src="./assets/rashmi-emblem.png" alt="Developer Rashmi gaming emblem">
+      <button class="section-sound-button" type="button" data-audio-page="video" aria-label="Play video section music" aria-pressed="false" title="Video section sound">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4V5Z"/><path d="m16 9 5 6m0-6-5 6"/></svg>
+      </button>
+    </section>
+    <section id="projects" aria-label="Project frames">
+      <div class="project-frame game-frame" aria-label="Game frame">
+        <iframe id="game-frame" src="/Game/Rashmipp/index.html" title="Rashmipp game" loading="lazy" allow="autoplay; fullscreen"></iframe>
+      </div>
+      <div class="project-frame portfolio-frame" aria-label="PPMake portfolio frame">
+        <iframe id="ppmake-portfolio" src="/portfolio" title="PPMake portfolio" loading="lazy"></iframe>
+      </div>
+    </section>
+    <video id="source" autoplay muted playsinline preload="auto" aria-hidden="true">
+      <source src="./assets/snow.mp4" type="video/mp4">
+    </video>
+    <audio id="song" loop preload="auto">
+      <source src="./assets/song.m4a" type="audio/mp4">
+    </audio>
+  </main>
+  <script>
+    const video = document.querySelector("#source");
+    const canvas = document.querySelector("#screen");
+    const context = canvas.getContext("2d", { alpha: false });
+    const song = document.querySelector("#song");
+    const soundButtons = [...document.querySelectorAll("[data-audio-page]")];
+    const gameFrame = document.querySelector("#game-frame");
+    const portfolioFrame = document.querySelector("#ppmake-portfolio");
+    let reversing = false;
+    let musicStarted = false;
+    const musicBaseVolume = 0.56;
+    let audioOwner = localStorage.getItem("audio_owner") || "video";
+    if (audioOwner === "game") audioOwner = "video";
+    let ppmakeMuted = audioOwner !== "ppmake";
+    localStorage.setItem("audio_owner", audioOwner);
+    localStorage.setItem("audio_muted", String(ppmakeMuted));
+    const savedVolume = Number.parseFloat(localStorage.getItem("audio_volume"));
+    let ppmakeVolume = Number.isFinite(savedVolume) ? Math.max(0, Math.min(1, savedVolume)) : 0.5;
+    const frameStep = 1 / 24;
+
+    function updateSoundButton() {
+      const musicPageActive = audioOwner === "video" || audioOwner === "game";
+      const soundOn = musicStarted && musicPageActive && ppmakeVolume > 0;
+      song.volume = Math.max(0, Math.min(1, musicBaseVolume * ppmakeVolume));
+      song.muted = !soundOn;
+      soundButtons.forEach((button) => {
+        const active = button.dataset.audioPage === audioOwner && (button.dataset.audioPage === "ppmake" ? !ppmakeMuted : soundOn);
+        button.setAttribute("aria-pressed", String(active));
+        button.setAttribute("aria-label", `${active ? "Turn off" : "Turn on"} ${button.dataset.audioPage} sound`);
+        button.innerHTML = active
+          ? '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4V5Z"/><path d="M16 9a5 5 0 0 1 0 6m3-9a9 9 0 0 1 0 12"/></svg>'
+          : '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4V5Z"/><path d="m16 9 5 6m0-6-5 6"/></svg>';
+      });
+    }
+
+    function setAudioOwner(owner) {
+      audioOwner = owner;
+      ppmakeMuted = owner !== "ppmake";
+      if (owner !== "none" && ppmakeVolume <= 0) {
+        ppmakeVolume = 0.5;
+        localStorage.setItem("audio_volume", String(ppmakeVolume));
+      }
+      localStorage.setItem("audio_owner", owner || "none");
+      localStorage.setItem("audio_muted", String(ppmakeMuted));
+      portfolioFrame.contentWindow.postMessage({ type: "PPMAKE_AUDIO_OWNER", owner: owner || "none" }, window.location.origin);
+      gameFrame.contentWindow.postMessage({ type: "GAME_AUDIO_OWNER", owner: owner || "none" }, window.location.origin);
+      updateSoundButton();
+      if (owner !== "video" && owner !== "game") {
+        song.pause();
+      } else {
+        musicStarted = true;
+        updateSoundButton();
+        song.play().catch(() => {
+          musicStarted = false;
+          updateSoundButton();
+          const button = soundButtons.find((item) => item.dataset.audioPage === owner);
+          if (button) button.title = "Click again to start the music";
+        });
+      }
+    }
+
+    function resize() {
+      const scale = Math.min(window.devicePixelRatio || 1, 2);
+      canvas.width = Math.round(window.innerWidth * scale);
+      canvas.height = Math.round(window.innerHeight * scale);
+      drawFrame();
+    }
+
+    function drawFrame() {
+      if (video.readyState < 2 || !video.videoWidth) return;
+      const scale = Math.max(canvas.width / video.videoWidth, canvas.height / video.videoHeight);
+      const width = video.videoWidth * scale;
+      const height = video.videoHeight * scale;
+      context.drawImage(video, (canvas.width - width) / 2, (canvas.height - height) / 2, width, height);
+    }
+
+    function animate() {
+      if (!reversing) drawFrame();
+      requestAnimationFrame(animate);
+    }
+
+    function stepBackward() {
+      if (!reversing || video.seeking) return;
+      if (video.currentTime <= frameStep) {
+        reversing = false;
+        video.currentTime = 0;
+        video.play().catch(() => {});
+        return;
+      }
+      video.currentTime = Math.max(0, video.currentTime - frameStep);
+    }
+
+    video.addEventListener("seeked", () => {
+      drawFrame();
+      if (reversing) stepBackward();
+    });
+    video.addEventListener("ended", () => {
+      reversing = true;
+      video.pause();
+      video.currentTime = Math.max(0, video.duration - frameStep);
+    });
+    video.addEventListener("loadeddata", () => {
+      drawFrame();
+      video.muted = true;
+      video.volume = 0;
+      video.play().catch(() => {});
+    });
+    window.addEventListener("storage", (event) => {
+      if (event.key === "audio_muted") ppmakeMuted = event.newValue === "true";
+      if (event.key === "audio_volume") {
+        const nextVolume = Number.parseFloat(event.newValue);
+        if (Number.isFinite(nextVolume)) ppmakeVolume = Math.max(0, Math.min(1, nextVolume));
+      }
+      updateSoundButton();
+    });
+
+    window.addEventListener("message", (event) => {
+      if (event.origin !== window.location.origin || event.source !== portfolioFrame.contentWindow) return;
+      const state = event.data;
+      if (!state || state.type !== "PPMAKE_AUDIO_STATE") return;
+      ppmakeMuted = Boolean(state.isMuted);
+      const nextVolume = Number(state.globalVolume);
+      if (Number.isFinite(nextVolume)) ppmakeVolume = Math.max(0, Math.min(1, nextVolume));
+      updateSoundButton();
+      if (state.userGesture && !ppmakeMuted && ppmakeVolume > 0) {
+        setAudioOwner("ppmake");
+      } else if (state.userGesture && audioOwner === "ppmake") {
+        setAudioOwner("none");
+      }
+    });
+
+    soundButtons.forEach((button) => button.addEventListener("click", () => {
+      const page = button.dataset.audioPage;
+      if (page === audioOwner) {
+        setAudioOwner("none");
+      } else if (page === "ppmake") {
+        setAudioOwner("ppmake");
+      } else {
+        setAudioOwner(page);
+      }
+    }));
+    updateSoundButton();
+    // Start the soundtrack with the opening video whenever the browser allows
+    // audible autoplay. If it blocks playback, the speaker button remains the
+    // one-tap fallback and starts the song from the user's gesture.
+    if ((audioOwner === "video" || audioOwner === "game") && ppmakeVolume > 0) {
+      musicStarted = true;
+      updateSoundButton();
+      song.play().catch(() => {
+        musicStarted = false;
+        updateSoundButton();
+        soundButtons[0].title = "Click the speaker to start the music";
+      });
+    }
+    window.addEventListener("resize", resize);
+    resize();
+    requestAnimationFrame(animate);
+  </script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1368" height="623" viewBox="0 0 1368 623">
+  <g fill="#fff" stroke="#242424" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M87 220 L1272 220 L1241 315 L1199 346 L1172 429 L1138 457 L1098 548 L1050 567 L1004 606 L960 578 L920 610 L876 577 L833 609 L787 578 L744 610 L698 580 L653 610 L610 578 L563 608 L520 577 L476 607 L433 577 L388 606 L346 575 L302 604 L260 571 L222 592 L194 550 L158 531 L151 467 L119 436 L128 359 L104 326 Z" stroke-width="5"/>
+    <path d="M82 220 Q217 204 353 217 T630 214 T911 218 T1280 216" fill="none" stroke-width="3"/>
+    <path d="M108 247 L1256 245 M137 279 L1235 276 M164 315 L1208 313" fill="none" stroke="#777" stroke-width="2"/>
+    <path d="M153 352 L191 343 M228 398 L266 386 M335 458 L371 445 M475 515 L511 499 M612 555 L651 538 M782 548 L815 563 M943 505 L980 522 M1080 440 L1115 458 M1171 368 L1204 383" fill="none" stroke="#555" stroke-width="3"/>
+    <path d="M130 218 l-13 -28 23 14 8 -31 14 40 M205 215 l-7 -29 20 21 5 -34 12 41 M1136 216 l10 -32 10 26 15 -37 11 43 M1210 214 l18 -34 5 31 22 -24 2 28" fill="none" stroke-width="3"/>
+    <path d="M311 225 l-3 62 M1055 222 l6 65 M300 286 l20 0 M1044 286 l22 0" fill="none" stroke-width="3"/>
+    <path d="M112 330 Q137 351 159 330 M1208 323 Q1230 344 1254 320 M273 568 l19 25 M1100 538 l17 25 M528 579 l14 27 M849 579 l15 27" fill="none" stroke="#777" stroke-width="2"/>
+  </g>
+  <g fill="none" stroke="#444" stroke-linecap="round">
+    <path d="M89 225 l-16 11 M1280 220 l17 13 M239 590 l-8 12 M1190 555 l8 13 M674 596 l-5 15 M1013 576 l9 12" stroke-width="2"/>
+    <path d="M133 360 l-12 5 M145 449 l-14 3 M248 573 l-10 12 M384 590 l-12 14 M729 589 l-11 13 M957 579 l-11 13 M1168 441 l12 6" stroke-width="1.5"/>
+  </g>
+  <rect x="363" y="348" width="642" height="137" rx="4" fill="#fff" stroke="#242424" stroke-width="5"/>
+  <path d="M371 355 l16 -3 M990 477 l10 5" fill="none" stroke="#777" stroke-width="2"/>
+  <text x="684" y="178" fill="#242424" stroke="#242424" stroke-width="1" text-anchor="middle" font-family="cursive" font-size="128" font-weight="700" letter-spacing="5">INTERNSHIP</text>
+  <path d="M129 185 Q350 172 552 181 T979 179 T1236 184 M184 194 l29 -2 M1114 193 l31 2" fill="none" stroke="#777" stroke-width="2"/>
+</svg>

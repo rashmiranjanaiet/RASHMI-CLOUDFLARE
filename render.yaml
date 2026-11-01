@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: dev-rashmi
+    runtime: static
+    buildCommand: npm ci && npm run build
+    staticPublishPath: ./dist
+    autoDeployTrigger: commit
+    routes:
+      - type: rewrite
+        source: /start
+        destination: /start/index.html
+      - type: rewrite
+        source: /start/
+        destination: /start/index.html
+      - type: rewrite
+        source: /*
+        destination: /index.html

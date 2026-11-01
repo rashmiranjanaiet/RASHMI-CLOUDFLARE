@@ -1,0 +1,11 @@
+node_modules/
+dist/
+.env
+.env.*
+.DS_Store
+Game/Rashmipp/Build/Rashmipp.data
+public/Game/Rashmipp/Build/Rashmipp.data
+
+Game/Rashmipp/Build/Rashmipp.data.part-*
+public/Game/
+public/PPMake/
